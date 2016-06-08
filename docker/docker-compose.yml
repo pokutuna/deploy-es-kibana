@@ -1,0 +1,10 @@
+version: '2'
+services:
+  es:
+    build: ./es/
+  kibana:
+    build: ./kibana/
+    depends_on:
+      - es
+    links:
+      - es
